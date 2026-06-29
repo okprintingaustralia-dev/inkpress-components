@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Newsreader:opsz,wght@6..72,500&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --inkpress-red: #CE0E2D;
+    --text: #434343;
+    --border: #CCCCCC;
+    --light-bg: #FAFAFA;
+    --white: #FFFFFF;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    color: var(--text);
+    font-family: "Lato", Arial, sans-serif;
+  }
+
+  .comparison-wrap {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    overflow: hidden;
+    background: var(--white);
+  }
+
+  .comparison-intro {
+    background: var(--light-bg);
+    padding: 28px 42px;
+    border-bottom: 1px solid var(--border);
+    font-size: 18px;
+    line-height: 1.5;
+  }
+
+  .comparison-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .method {
+    padding: 42px 44px 0;
+  }
+
+  .method:first-child {
+    border-right: 1px solid var(--border);
+  }
+
+  .method h2 {
+    margin: 0 0 14px;
+    font-family: "Newsreader", Georgia, serif;
+    font-size: 34px;
+    font-weight: 500;
+    line-height: 1.15;
+    color: var(--text);
+  }
+
+  .method-description {
+    margin: 0 0 38px;
+    font-size: 18px;
+    line-height: 1.45;
+    color: var(--text);
+  }
+
+  .comparison-row {
+    border-top: 1px solid var(--border);
+    padding: 24px 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 18px;
+    line-height: 1.4;
+  }
+
+  .dot {
+    width: 8px;
+    height: 8px;
+    margin-top: 9px;
+    border-radius: 50%;
+    background: var(--inkpress-red);
+    flex: 0 0 8px;
+  }
+
+  @media (max-width: 800px) {
+    .comparison-wrap {
+      border-radius: 12px;
+    }
+
+    .comparison-intro {
+      padding: 24px 26px;
+      font-size: 17px;
+    }
+
+    .comparison-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .method {
+      padding: 34px 28px 0;
+    }
+
+    .method:first-child {
+      border-right: none;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .method h2 {
+      font-size: 32px;
+    }
+
+    .method-description,
+    .comparison-row {
+      font-size: 17px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .comparison-intro {
+      padding: 22px 22px;
+      font-size: 16px;
+    }
+
+    .method {
+      padding: 30px 22px 0;
+    }
+
+    .method h2 {
+      font-size: 29px;
+    }
+
+    .method-description,
+    .comparison-row {
+      font-size: 16px;
+    }
+  }
+</style>
+</head>
+
+<body>
+
+<section class="comparison-wrap">
+
+  <div class="comparison-intro">
+    Every foil printing method has its strengths. Here's a simple comparison to help you choose the right option for your project.
+  </div>
+
+  <div class="comparison-grid">
+
+    <div class="method">
+      <h2>Traditional Foil</h2>
+
+      <p class="method-description">
+        Often chosen for larger production runs, where custom tooling becomes more cost-effective.
+      </p>
+
+      <div class="comparison-row">
+        <span class="dot"></span>
+        <span>Requires a custom metal plate</span>
+      </div>
+
+      <div class="comparison-row">
+        <span class="dot"></span>
+        <span>Requires a separate cutting die</span>
+      </div>
+
+      <div class="comparison-row">
+        <span class="dot"></span>
+        <span>Ideal for larger order quantities</span>
+      </div>
+
+      <div class="comparison-row">
+        <span class="dot"></span>
+        <span>Higher setup costs</span>
+      </div>
+
+      <div class="comparison-row">
+        <span class="dot"></span>
+        <span>Offers embossed &amp; debossed finishes</span>
+      </div>
+    </div>
+
+    <div class="method">
+      <h2>Digital Foil (Inkpress)</h2>
+
+      <p class="method-description">
+        Often chosen for projects that value flexibility, smaller quantities and shorter production times.
+      </p>
+
+      <div class="comparison-row">
+        <span class="dot"></span>
+        <span>Requires no custom metal plate</span>
+      </div>
+
+      <div class="comparison-row">
+        <span class="dot"></span>
+        <span>Requires no cutting die</span>
+      </div>
+
+      <div class="comparison-row">
+        <span class="dot"></span>
+        <span>Ideal for smaller order quantities</span>
+      </div>
+
+      <div class="comparison-row">
+        <span class="dot"></span>
+        <span>Lower setup costs</span>
+      </div>
+
+      <div class="comparison-row">
+        <span class="dot"></span>
+        <span>Offers a smooth, flat metallic finish</span>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+</body>
+</html>
