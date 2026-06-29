@@ -4,14 +4,14 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Newsreader:opsz,wght@6..72,500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@400&family=Newsreader:opsz,wght@6..72,500&display=swap" rel="stylesheet">
 
 <style>
   :root {
-    --inkpress-red: #CE0E2D;
     --text: #434343;
+    --red: #CE0E2D;
     --border: #CCCCCC;
-    --light-bg: #FAFAFA;
+    --light-grey: #FAFAFA;
     --white: #FFFFFF;
   }
 
@@ -19,130 +19,122 @@
     box-sizing: border-box;
   }
 
+  html,
   body {
     margin: 0;
     padding: 0;
     background: transparent;
-    color: var(--text);
     font-family: "Lato", Arial, sans-serif;
+    color: var(--text);
   }
 
-  .comparison-wrap {
+  .comparison-table {
     width: 100%;
-    max-width: 1100px;
+    max-width: 920px;
     margin: 0 auto;
     border: 1px solid var(--border);
-    border-radius: 14px;
+    border-radius: 10px;
     overflow: hidden;
     background: var(--white);
   }
 
-  .comparison-intro {
-    background: var(--light-bg);
-    padding: 28px 42px;
+  .intro {
+    background: var(--light-grey);
+    padding: 26px 42px;
     border-bottom: 1px solid var(--border);
-    font-size: 18px;
-    line-height: 1.5;
+    font-size: 16px;
+    line-height: 1.45;
   }
 
-  .comparison-grid {
+  .columns {
     display: grid;
     grid-template-columns: 1fr 1fr;
   }
 
-  .method {
-    padding: 42px 44px 0;
+  .column {
+    padding: 38px 42px 0;
   }
 
-  .method:first-child {
+  .column:first-child {
     border-right: 1px solid var(--border);
   }
 
-  .method h2 {
-    margin: 0 0 14px;
+  h2 {
+    margin: 0 0 12px;
     font-family: "Newsreader", Georgia, serif;
-    font-size: 34px;
+    font-size: 32px;
     font-weight: 500;
     line-height: 1.15;
     color: var(--text);
   }
 
-  .method-description {
+  .subtext {
     margin: 0 0 38px;
-    font-size: 18px;
+    font-size: 16px;
     line-height: 1.45;
-    color: var(--text);
   }
 
-  .comparison-row {
-    border-top: 1px solid var(--border);
-    padding: 24px 0;
+  .row {
     display: flex;
     align-items: flex-start;
-    gap: 12px;
-    font-size: 18px;
-    line-height: 1.4;
+    gap: 10px;
+    padding: 20px 0;
+    border-top: 1px solid var(--border);
+    font-size: 16px;
+    line-height: 1.35;
   }
 
   .dot {
-    width: 8px;
-    height: 8px;
-    margin-top: 9px;
+    width: 7px;
+    height: 7px;
+    margin-top: 8px;
     border-radius: 50%;
-    background: var(--inkpress-red);
-    flex: 0 0 8px;
+    background: var(--red);
+    flex: 0 0 7px;
   }
 
-  @media (max-width: 800px) {
-    .comparison-wrap {
-      border-radius: 12px;
-    }
-
-    .comparison-intro {
-      padding: 24px 26px;
-      font-size: 17px;
-    }
-
-    .comparison-grid {
+  @media (max-width: 760px) {
+    .columns {
       grid-template-columns: 1fr;
     }
 
-    .method {
-      padding: 34px 28px 0;
-    }
-
-    .method:first-child {
+    .column:first-child {
       border-right: none;
       border-bottom: 1px solid var(--border);
     }
 
-    .method h2 {
-      font-size: 32px;
+    .intro,
+    .column {
+      padding-left: 26px;
+      padding-right: 26px;
     }
 
-    .method-description,
-    .comparison-row {
-      font-size: 17px;
+    h2 {
+      font-size: 30px;
     }
   }
 
   @media (max-width: 480px) {
-    .comparison-intro {
-      padding: 22px 22px;
-      font-size: 16px;
+    .comparison-table {
+      border-radius: 8px;
     }
 
-    .method {
+    .intro {
+      padding: 22px;
+      font-size: 15px;
+    }
+
+    .column {
       padding: 30px 22px 0;
     }
 
-    .method h2 {
-      font-size: 29px;
+    h2 {
+      font-size: 28px;
     }
 
-    .method-description,
-    .comparison-row {
-      font-size: 16px;
+    .subtext,
+    .row {
+      font-size: 15px;
     }
   }
 </style>
@@ -150,83 +142,45 @@
 
 <body>
 
-<section class="comparison-wrap">
+<div class="comparison-table">
 
-  <div class="comparison-intro">
+  <div class="intro">
     Every foil printing method has its strengths. Here's a simple comparison to help you choose the right option for your project.
   </div>
 
-  <div class="comparison-grid">
+  <div class="columns">
 
-    <div class="method">
+    <div class="column">
       <h2>Traditional Foil</h2>
 
-      <p class="method-description">
+      <p class="subtext">
         Often chosen for larger production runs, where custom tooling becomes more cost-effective.
       </p>
 
-      <div class="comparison-row">
-        <span class="dot"></span>
-        <span>Requires a custom metal plate</span>
-      </div>
-
-      <div class="comparison-row">
-        <span class="dot"></span>
-        <span>Requires a separate cutting die</span>
-      </div>
-
-      <div class="comparison-row">
-        <span class="dot"></span>
-        <span>Ideal for larger order quantities</span>
-      </div>
-
-      <div class="comparison-row">
-        <span class="dot"></span>
-        <span>Higher setup costs</span>
-      </div>
-
-      <div class="comparison-row">
-        <span class="dot"></span>
-        <span>Offers embossed &amp; debossed finishes</span>
-      </div>
+      <div class="row"><span class="dot"></span><span>Requires a custom metal plate</span></div>
+      <div class="row"><span class="dot"></span><span>Requires a separate cutting die</span></div>
+      <div class="row"><span class="dot"></span><span>Ideal for larger order quantities</span></div>
+      <div class="row"><span class="dot"></span><span>Higher setup costs</span></div>
+      <div class="row"><span class="dot"></span><span>Offers embossed &amp; debossed finishes</span></div>
     </div>
 
-    <div class="method">
+    <div class="column">
       <h2>Digital Foil (Inkpress)</h2>
 
-      <p class="method-description">
+      <p class="subtext">
         Often chosen for projects that value flexibility, smaller quantities and shorter production times.
       </p>
 
-      <div class="comparison-row">
-        <span class="dot"></span>
-        <span>Requires no custom metal plate</span>
-      </div>
-
-      <div class="comparison-row">
-        <span class="dot"></span>
-        <span>Requires no cutting die</span>
-      </div>
-
-      <div class="comparison-row">
-        <span class="dot"></span>
-        <span>Ideal for smaller order quantities</span>
-      </div>
-
-      <div class="comparison-row">
-        <span class="dot"></span>
-        <span>Lower setup costs</span>
-      </div>
-
-      <div class="comparison-row">
-        <span class="dot"></span>
-        <span>Offers a smooth, flat metallic finish</span>
-      </div>
+      <div class="row"><span class="dot"></span><span>Requires no custom metal plate</span></div>
+      <div class="row"><span class="dot"></span><span>Requires no cutting die</span></div>
+      <div class="row"><span class="dot"></span><span>Ideal for smaller order quantities</span></div>
+      <div class="row"><span class="dot"></span><span>Lower setup costs</span></div>
+      <div class="row"><span class="dot"></span><span>Offers a smooth, flat metallic finish</span></div>
     </div>
 
   </div>
 
-</section>
+</div>
 
 </body>
 </html>
